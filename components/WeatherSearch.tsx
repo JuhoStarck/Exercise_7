@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react"
-import { useLocation } from "../hooks/useLocation"
-import { useWeather } from "../hooks/useWeather"
-import { degToDirection } from "../utils/windDirection"
+import { useState } from "react"
 import { StyleSheet, TextInput, View } from "react-native"
 
 type Props = {
@@ -10,8 +7,6 @@ type Props = {
 
 export function WeatherSearch ({ onSearch }: Props) {
   const [city, setCity] = useState('')
-  const { location, searchLocation } = useLocation()
-  const { weather, fetchWeather } = useWeather()
 
   function handleSubmit() {
     if (!city.trim()) return
